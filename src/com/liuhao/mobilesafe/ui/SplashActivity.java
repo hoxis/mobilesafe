@@ -10,6 +10,7 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
@@ -84,6 +85,7 @@ public class SplashActivity extends Activity {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				Log.i(TAG, "用户取消升级，进入程序主界面");
+				loadMainUI();
 			}
 		});
     	
@@ -100,9 +102,16 @@ public class SplashActivity extends Activity {
     	UpdateInfoService service = new UpdateInfoService(this);
     	try {
 			info = service.getUpdateInfo(R.string.updateurl);
+			if("".equals(info.getVersion()) || info.getVersion() == null){
+				Toast.makeText(this, "联网获取版本信息异常", Toast.LENGTH_SHORT).show();
+				Log.i(TAG, "联网获取版本信息异常，进入到主界面");
+				loadMainUI();
+				return false;
+			}
 			String version = info.getVersion();
 			if(versiontext.equals(version)){
 				Log.i(TAG, "版本号相同，无需升级，进入到主界面");
+				loadMainUI();
 				return false;
 			}
 			else{
@@ -116,8 +125,9 @@ public class SplashActivity extends Activity {
 			 * 1、需要提示用户，但又不需要用户点击“确定”或者“取消”按钮。
 			 * 2、不影响现有Activity运行的简单提示。
 			 */
-			Toast.makeText(this, "获取更新信息异常", 2).show();//弹出文本，并保持2秒
+			Toast.makeText(this, "获取更新信息异常", Toast.LENGTH_SHORT).show();//弹出文本，并保持2秒
 			Log.i(TAG, "获取更新信息异常，进入到主界面");
+			loadMainUI();
 			return false;
 		}
     	
@@ -148,6 +158,12 @@ public class SplashActivity extends Activity {
 			return "版本号未知";
 		}
     	
+    }
+    
+    private void loadMainUI(){
+    	Intent intent = new Intent(this, MainActivity.class);
+    	startActivity(intent);
+    	finish(); //将当前Activity从任务栈中移除，用户按后退键时便不会再到SplashActivity界面来
     }
     
 }

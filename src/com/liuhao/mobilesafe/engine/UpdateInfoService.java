@@ -17,9 +17,10 @@ public class UpdateInfoService {
 		this.context = context;
 	}
 
-	// 将与网络通信的过程封装在ServiceInBackGround的doInBackground方法中
+	//  Ⅰ:子类化AsyncTask,将与网络通信的过程封装在ServiceInBackGround的doInBackground方法中
 	private class ServiceInBackGround extends AsyncTask<Integer, Void, UpdateInfo>{
 
+		// 实现AsyncTask中定义的doInBackground方法 
 		@Override
 		protected UpdateInfo doInBackground(Integer... params) {
 			String path = context.getResources().getString(params[0]); //根据urlId获取资源文件中对应的内容
