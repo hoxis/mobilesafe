@@ -3,17 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:padding="10dip"
+    >
     
     <GridView 
      android:id="@+id/gv_main"   
         android:layout_width="match_parent"
     	android:layout_height="match_parent"
     	android:horizontalSpacing="10dip"
-    	android:verticalSpacing="20dip"
+    	android:verticalSpacing="10dip"
         android:numColumns="3"
         >
-        
         
     </GridView>
 
