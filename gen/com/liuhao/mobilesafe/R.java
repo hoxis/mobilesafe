@@ -29,14 +29,15 @@ public final class R {
         public static final int icon5=0x7f020001;
         public static final int item_background=0x7f020002;
         public static final int logo2=0x7f020003;
-        public static final int widget01=0x7f020004;
-        public static final int widget02=0x7f020005;
-        public static final int widget03=0x7f020006;
-        public static final int widget04=0x7f020007;
-        public static final int widget05=0x7f020008;
-        public static final int widget06=0x7f020009;
-        public static final int widget07=0x7f02000a;
-        public static final int widget08=0x7f02000b;
+        public static final int title_background=0x7f020004;
+        public static final int widget01=0x7f020005;
+        public static final int widget02=0x7f020006;
+        public static final int widget03=0x7f020007;
+        public static final int widget04=0x7f020008;
+        public static final int widget05=0x7f020009;
+        public static final int widget06=0x7f02000a;
+        public static final int widget07=0x7f02000b;
+        public static final int widget08=0x7f02000c;
     }
     public static final class id {
         public static final int action_settings=0x7f090005;

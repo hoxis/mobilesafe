@@ -33,6 +33,7 @@
         </activity>
         
         <activity android:name="com.liuhao.mobilesafe.ui.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
             android:label="@string/main_screen">
         </activity>
     </application>
