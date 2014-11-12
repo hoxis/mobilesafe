@@ -25,33 +25,37 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int icon5=0x7f020001;
-        public static final int item_background=0x7f020002;
-        public static final int logo2=0x7f020003;
-        public static final int title_background=0x7f020004;
-        public static final int widget01=0x7f020005;
-        public static final int widget02=0x7f020006;
-        public static final int widget03=0x7f020007;
-        public static final int widget04=0x7f020008;
-        public static final int widget05=0x7f020009;
-        public static final int widget06=0x7f02000a;
-        public static final int widget07=0x7f02000b;
-        public static final int widget08=0x7f02000c;
+        public static final int button_background=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int icon5=0x7f020002;
+        public static final int item_background=0x7f020003;
+        public static final int logo2=0x7f020004;
+        public static final int title_background=0x7f020005;
+        public static final int widget01=0x7f020006;
+        public static final int widget02=0x7f020007;
+        public static final int widget03=0x7f020008;
+        public static final int widget04=0x7f020009;
+        public static final int widget05=0x7f02000a;
+        public static final int widget06=0x7f02000b;
+        public static final int widget07=0x7f02000c;
+        public static final int widget08=0x7f02000d;
     }
     public static final class id {
-        public static final int action_settings=0x7f090005;
-        public static final int gv_main=0x7f090000;
-        public static final int iv_main_icon=0x7f090001;
-        public static final int ll_splash_main=0x7f090003;
-        public static final int tv_main_name=0x7f090002;
-        public static final int tv_splash_version=0x7f090004;
+        public static final int action_settings=0x7f090007;
+        public static final int et_first_entry_pwd=0x7f090000;
+        public static final int et_first_entry_pwd_confirm=0x7f090001;
+        public static final int gv_main=0x7f090002;
+        public static final int iv_main_icon=0x7f090003;
+        public static final int ll_splash_main=0x7f090005;
+        public static final int tv_main_name=0x7f090004;
+        public static final int tv_splash_version=0x7f090006;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
-        public static final int mainscreen=0x7f030001;
-        public static final int mainscreen_item=0x7f030002;
-        public static final int splash=0x7f030003;
+        public static final int first_entry_dialog=0x7f030000;
+        public static final int main=0x7f030001;
+        public static final int mainscreen=0x7f030002;
+        public static final int mainscreen_item=0x7f030003;
+        public static final int splash=0x7f030004;
     }
     public static final class menu {
         public static final int splash=0x7f080000;
@@ -60,6 +64,7 @@ public final class R {
         public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050001;
         public static final int hello_world=0x7f050003;
+        public static final int lost_protected=0x7f050005;
         public static final int main_screen=0x7f050004;
         public static final int updateurl=0x7f050000;
     }
@@ -85,10 +90,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f070001;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f070002;
+        public static final int MyDialog=0x7f070000;
     }
 }

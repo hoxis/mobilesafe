@@ -8,6 +8,7 @@ import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -109,6 +110,8 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		switch(position){
 		case 0 :
 			Log.i(TAG, "进入手机防盗");
+			Intent lostIntent = new Intent(MainActivity.this, LostProtectedActivity.class);
+			startActivity(lostIntent);
 			break;
 		}
 	}

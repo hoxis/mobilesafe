@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+
+    <!-- 边框 -->
+    <stroke
+        android:width="0.5dip"
+        android:color="#ff107048" />
+
+    <!-- 指定边角 -->
+    <corners android:radius="2dip" />
+
+    <!-- 渐变色 -->
+    <gradient
+        android:centerColor="#ff107048"
+        android:endColor="#ff085830"
+        android:startColor="#ff109860" />
+
+</shape>
