@@ -19,17 +19,10 @@
         android:orientation="vertical" >
 
         <EditText
-            android:id="@+id/et_first_entry_pwd"
+            android:id="@+id/et_normal_entry_pwd"
             android:layout_width="300dip"
             android:layout_height="wrap_content"
-            android:hint="手机防盗的密码"
-            android:password="true" />
-
-        <EditText
-            android:id="@+id/et_first_entry_pwd_confirm"
-            android:layout_width="300dip"
-            android:layout_height="wrap_content"
-            android:hint="确认密码"
+            android:hint="请输入密码"
             android:password="true" />
     </LinearLayout>
 
@@ -40,7 +33,7 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/bt_first_dialog_confirm"
+            android:id="@+id/bt_normal_dialog_confirm"
             android:layout_width="140dip"
             android:layout_height="40dip"
             android:background="@drawable/button_background"
@@ -48,7 +41,7 @@
             android:textColor="#ffffffff" />
 
         <Button
-            android:id="@+id/bt_first_dialog_cancel"
+            android:id="@+id/bt_normal_dialog_cancel"
             android:layout_width="140dip"
             android:layout_height="40dip"
             android:layout_marginLeft="3dip"
