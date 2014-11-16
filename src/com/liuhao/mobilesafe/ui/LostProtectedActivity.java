@@ -1,6 +1,7 @@
 package com.liuhao.mobilesafe.ui;
 
 import com.liuhao.mobilesafe.R;
+import com.liuhao.mobilesafe.util.MD5Encoder;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -117,7 +118,7 @@ public class LostProtectedActivity extends Activity implements OnClickListener {
 			}else{
 				if(pwd.equals(pwd_confirm)){
 					Editor editor = sp.edit();
-					editor.putString("password", pwd);
+					editor.putString("password", MD5Encoder.encode(pwd));
 					editor.commit();
 				}
 				// 两次输入不一致
@@ -139,7 +140,7 @@ public class LostProtectedActivity extends Activity implements OnClickListener {
 				return;
 			}else{
 				String password = sp.getString("password", "");
-				if(!password.equals(input_pwd)){
+				if(!password.equals(MD5Encoder.encode(input_pwd))){
 					Toast.makeText(getApplicationContext(), "输入密码不正确，请重新输入！", Toast.LENGTH_LONG).show();
 					et_pwd.selectAll();// 用户输入错误后，对文本进行全选，方便用户进行删除重新输入
 					return;
