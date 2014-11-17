@@ -36,7 +36,7 @@
             android:id="@+id/bt_normal_dialog_confirm"
             android:layout_width="140dip"
             android:layout_height="40dip"
-            android:background="@drawable/button_background"
+            android:background="@drawable/button_selector"
             android:text="确定"
             android:textColor="#ffffffff" />
 
@@ -45,7 +45,7 @@
             android:layout_width="140dip"
             android:layout_height="40dip"
             android:layout_marginLeft="3dip"
-            android:background="@drawable/button_background"
+            android:background="@drawable/button_selector"
             android:text="取消" />
     </LinearLayout>
 

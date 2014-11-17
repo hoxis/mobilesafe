@@ -3,35 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    android:orientation="vertical" 
-    android:padding="10dip"
-    >
-    
-    <LinearLayout 
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dip"
         android:background="@drawable/title_background"
         android:gravity="center_horizontal|center_vertical"
-        android:orientation="vertical"
-        >
-        <TextView 
+        android:orientation="vertical" >
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="全山手机卫士"
             android:textColor="@color/textcolor"
-            android:textSize="22sp"
-            android:text="山寨手机卫士"
-            />
+            android:textSize="22sp" />
     </LinearLayout>
-    
-    <GridView 
-     android:id="@+id/gv_main"   
+
+    <GridView
+        android:id="@+id/gv_main"
         android:layout_width="match_parent"
-    	android:layout_height="match_parent"
-    	android:horizontalSpacing="10dip"
-    	android:verticalSpacing="10dip"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dip"
+        android:horizontalSpacing="10dip"
+        android:listSelector="@drawable/item_background_selector"
         android:numColumns="3"
-        >
-        
+        android:verticalSpacing="10dip" >
     </GridView>
 
 </LinearLayout>

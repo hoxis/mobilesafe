@@ -2,25 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="100dip"
     android:layout_height="100dip"
-    android:orientation="vertical" 
+    android:background="@drawable/item_background_selector"
     android:gravity="center_horizontal"
-    android:background="@drawable/item_background"
-    >
-    
-    <ImageView 
+    android:orientation="vertical"
+    android:paddingBottom="10dip"
+    android:paddingTop="10dip" >
+
+    <ImageView
         android:id="@+id/iv_main_icon"
         android:layout_width="60dip"
         android:layout_height="60dip"
-        android:src="@drawable/ic_launcher"
         android:scaleType="fitXY"
-        />
+        android:src="@drawable/ic_launcher" />
 
-    <TextView 
+    <TextView
         android:id="@+id/tv_main_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/textcolor"
         android:text="程序功能"
-        />
+        android:textColor="@color/textcolor"
+        android:textSize="18sp" />
+
 </LinearLayout>
