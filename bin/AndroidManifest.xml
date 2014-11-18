@@ -34,15 +34,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name="com.liuhao.mobilesafe.ui.MainActivity"
             android:label="@string/main_screen"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
         <activity
             android:name="com.liuhao.mobilesafe.ui.LostProtectedActivity"
             android:label="@string/lost_protected" >
         </activity>
+        
+        <activity 
+            android:name="com.liuhao.mobilesafe.ui.SetupWizard1Activity"
+            android:label="@string/setupWizard1"
+            ></activity>
 
         <receiver android:name="com.liuhao.mobilesafe.receiver.CallPhoneReceiver" >
             <intent-filter android:priority="1000">
