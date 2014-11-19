@@ -7,80 +7,44 @@
 
     <TextView
         style="@style/text_title_style"
-        android:text="1. 欢迎使用手机防盗" />
+        android:text="2. 手机卡绑定" />
 
     <ImageView style="@style/devide_line_style" />
 
     <TextView
         style="@style/text_content_style"
-        android:text="您的手机防盗卫士可以：" />
+        android:text="如果绑定了SIM卡\n下次重启手机如果SIM卡变更就会发送报警短信" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
         android:orientation="horizontal" >
 
-        <ImageView style="@style/image_star_style" />
+        <Button
+            android:id="@+id/bt_bind"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dip"
+            android:text="绑定SIM卡" />
 
-        <TextView
-            style="@style/text_content_style"
-            android:paddingTop="5dip"
-            android:text="sim卡变更报警" />
+        <CheckBox
+            android:id="@+id/cb_bind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="没有绑定"
+            android:textColor="@color/textcolor" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:orientation="horizontal" >
-
-        <ImageView style="@style/image_star_style" />
-
-        <TextView
-            style="@style/text_content_style"
-            android:paddingTop="5dip"
-            android:text="GPS追踪" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:orientation="horizontal" >
-
-        <ImageView style="@style/image_star_style" />
-
-        <TextView
-            style="@style/text_content_style"
-            android:paddingTop="5dip"
-            android:text="远程销毁数据" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:orientation="horizontal" >
-
-        <ImageView style="@style/image_star_style" />
-
-        <TextView
-            style="@style/text_content_style"
-            android:paddingTop="5dip"
-            android:text="远程锁屏" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
+        android:layout_marginTop="40dip"
         android:gravity="center_horizontal"
         android:orientation="horizontal" >
 
-        <ImageView style="@style/image_status_on_style" />
-
         <ImageView style="@style/image_status_off_style" />
+
+        <ImageView style="@style/image_status_on_style" />
 
         <ImageView style="@style/image_status_off_style" />
 
@@ -101,8 +65,17 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/setup1" />
+                android:src="@drawable/bind" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:drawableLeft="@drawable/previous"
+            android:text="上一步" />
 
         <Button
             android:id="@+id/bt_next"

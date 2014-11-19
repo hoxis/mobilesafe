@@ -7,5 +7,8 @@
     <string name="main_screen">主界面</string>
     <string name="lost_protected">手机防盗</string>
     <string name="setupWizard1">设置向导1/4</string>
+    <string name="setupWizard2">设置向导2/4</string>
+    <string name="setupWizard3">设置向导3/4</string>
+    <string name="setupWizard4">设置向导4/4</string>
 
 </resources>
