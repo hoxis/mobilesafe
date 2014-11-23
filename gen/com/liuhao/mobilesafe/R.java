@@ -57,25 +57,26 @@ public final class R {
         public static final int widget09=0x7f020019;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0012;
-        public static final int bt_bind=0x7f0a000b;
+        public static final int action_settings=0x7f0a0013;
+        public static final int bt_bind=0x7f0a000c;
         public static final int bt_first_dialog_cancel=0x7f0a0003;
         public static final int bt_first_dialog_confirm=0x7f0a0002;
-        public static final int bt_next=0x7f0a000a;
+        public static final int bt_next=0x7f0a000b;
         public static final int bt_normal_dialog_cancel=0x7f0a0009;
         public static final int bt_normal_dialog_confirm=0x7f0a0008;
-        public static final int bt_previous=0x7f0a000d;
-        public static final int bt_select_contact=0x7f0a000f;
-        public static final int cb_bind=0x7f0a000c;
+        public static final int bt_previous=0x7f0a000e;
+        public static final int bt_select_contact=0x7f0a0010;
+        public static final int cb_bind=0x7f0a000d;
         public static final int et_first_entry_pwd=0x7f0a0000;
         public static final int et_first_entry_pwd_confirm=0x7f0a0001;
         public static final int et_normal_entry_pwd=0x7f0a0007;
-        public static final int et_setup3_phonenumber=0x7f0a000e;
+        public static final int et_setup3_phonenumber=0x7f0a000f;
         public static final int gv_main=0x7f0a0004;
         public static final int iv_main_icon=0x7f0a0005;
-        public static final int ll_splash_main=0x7f0a0010;
+        public static final int ll_splash_main=0x7f0a0011;
+        public static final int lv_select_contact=0x7f0a000a;
         public static final int tv_main_name=0x7f0a0006;
-        public static final int tv_splash_version=0x7f0a0011;
+        public static final int tv_splash_version=0x7f0a0012;
     }
     public static final class layout {
         public static final int first_entry_dialog=0x7f030000;
@@ -83,11 +84,12 @@ public final class R {
         public static final int mainscreen=0x7f030002;
         public static final int mainscreen_item=0x7f030003;
         public static final int normal_entry_dialog=0x7f030004;
-        public static final int setup_wizard1=0x7f030005;
-        public static final int setup_wizard2=0x7f030006;
-        public static final int setup_wizard3=0x7f030007;
-        public static final int setup_wizard4=0x7f030008;
-        public static final int splash=0x7f030009;
+        public static final int select_contact=0x7f030005;
+        public static final int setup_wizard1=0x7f030006;
+        public static final int setup_wizard2=0x7f030007;
+        public static final int setup_wizard3=0x7f030008;
+        public static final int setup_wizard4=0x7f030009;
+        public static final int splash=0x7f03000a;
     }
     public static final class menu {
         public static final int splash=0x7f090000;
@@ -98,6 +100,7 @@ public final class R {
         public static final int hello_world=0x7f060003;
         public static final int lost_protected=0x7f060005;
         public static final int main_screen=0x7f060004;
+        public static final int select_contact=0x7f06000a;
         public static final int setupWizard1=0x7f060006;
         public static final int setupWizard2=0x7f060007;
         public static final int setupWizard3=0x7f060008;

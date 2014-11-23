@@ -57,6 +57,7 @@ public class SetupWizard2Activity extends Activity implements OnClickListener {
 					setSimInfo();
 					cb_bind.setText("已绑定SIM卡");
 				}else{
+					resetSimInfo();
 					cb_bind.setText("未绑定SIM卡");
 				}
 
@@ -91,7 +92,6 @@ public class SetupWizard2Activity extends Activity implements OnClickListener {
 
 	/**
 	 * 绑定SIM串号
-	 * 
 	 */
 	private void setSimInfo() {
 		TelephonyManager manager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
@@ -100,5 +100,15 @@ public class SetupWizard2Activity extends Activity implements OnClickListener {
 		edit.putString("sim", simSerialNumber);
 		edit.commit();
 		Toast.makeText(getApplicationContext(), "SIM卡已绑定", Toast.LENGTH_SHORT).show();
+	}
+	
+	/**
+	 * 取消绑定SIM串号
+	 */
+	private void resetSimInfo(){
+		Editor edit = sp.edit();
+		edit.putString("sim", null);
+		edit.commit();
+		Toast.makeText(getApplicationContext(), "已取消SIM卡绑定", Toast.LENGTH_SHORT).show();
 	}
 }
