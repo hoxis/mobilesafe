@@ -30,19 +30,19 @@ public class SelectContactActivity extends Activity {
 		setContentView(R.layout.select_contact);
 		
 		ContactInfoService service = new ContactInfoService(this);
-		infos = service.getContactInfos();
+		infos = service.getContactInfos();// 获取到联系人数据
 		
 		lv = (ListView) this.findViewById(R.id.lv_select_contact);
-		lv.setAdapter(new SelectContactAdapter());
-		lv.setOnItemClickListener(new OnItemClickListener() {
+		lv.setAdapter(new SelectContactAdapter());// 将联系人数据适配到ListView中
+		lv.setOnItemClickListener(new OnItemClickListener() {// 设置点击每个条目时的响应事件
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				String phone = infos.get(position).getPhone();
+				String phone = infos.get(position).getPhone();// 获取到该联系人的号码
 				Intent intent = new Intent();
-				intent.putExtra("phone", phone);
-				setResult(0, intent);
+				intent.putExtra("phone", phone);// 将号码数据设置到Intent中
+				setResult(0, intent);// Call this to set the result that your activity will return to its caller. 将Intent结果返回给调用者
 				finish();
 			}
 			
