@@ -3,12 +3,16 @@ package com.liuhao.mobilesafe.ui;
 import com.liuhao.mobilesafe.R;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SetupWizard3Activity extends Activity implements OnClickListener {
 
@@ -16,11 +20,14 @@ public class SetupWizard3Activity extends Activity implements OnClickListener {
 	private Button bt_next;
 	private Button bt_prev;
 	private EditText et_number;
+	private SharedPreferences sp;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.setup_wizard3);
+		
+		sp = getSharedPreferences("config", Context.MODE_PRIVATE);
 		
 		bt_select_contact = (Button) this.findViewById(R.id.bt_select_contact);
 		bt_next = (Button) this.findViewById(R.id.bt_next);
@@ -41,11 +48,24 @@ public class SetupWizard3Activity extends Activity implements OnClickListener {
 			startActivityForResult(intent, 0);
 			break;
 		case R.id.bt_next:
+			String number = et_number.getText().toString().trim();
+			// 判断是否已经输入了安全号码
+			if(number==null || "".equals(number)){
+				Toast.makeText(this, "安全号码不能为空", Toast.LENGTH_SHORT).show();
+				return;
+			}else{
+				// 将安全号码保存扫SharePreference中
+				Editor editor = sp.edit();
+				editor.putString("safenumber", number);
+				editor.commit();
+				Toast.makeText(this, "安全号码已保存", Toast.LENGTH_SHORT).show();
+			}
+			
 			finish();// 用户点击“后退”时不会再看到这个界面
 			Intent intent4 = new Intent(this, SetupWizard4Activity.class);
 			startActivity(intent4);
 			// 设置Activity切换时的动画效果
-			overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
+			overridePendingTransition(R.anim.translate_in, R.anim.translate_out);
 			break;
 		case R.id.bt_previous:
 			finish();// 用户点击“后退”时不会再看到这个界面
