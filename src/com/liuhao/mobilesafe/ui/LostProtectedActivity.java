@@ -14,7 +14,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LostProtectedActivity extends Activity implements OnClickListener {
@@ -24,6 +28,9 @@ public class LostProtectedActivity extends Activity implements OnClickListener {
 	private Dialog dialog;
 	private EditText et_pwd;
 	private EditText et_pwd_confirm;
+	private TextView tv_lost_protected_number;
+	private TextView tv_reEntry_setup_wizard;
+	private CheckBox cb_isprotecting;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +119,7 @@ public class LostProtectedActivity extends Activity implements OnClickListener {
 			String pwd = et_pwd.getText().toString().trim();
 			String pwd_confirm = et_pwd_confirm.getText().toString().trim();
 			
-			// 输入的密码中包好空值
+			// 输入的密码中包含空值
 			if("".equals(pwd) || "".equals(pwd_confirm)){
 				Toast.makeText(getApplicationContext(), "输入不能为空！", Toast.LENGTH_LONG).show();
 				return;
@@ -130,6 +137,10 @@ public class LostProtectedActivity extends Activity implements OnClickListener {
 				}
 			}
 			dialog.dismiss();
+			// 进入手机防盗设置界面
+			finish();
+			Intent intent = new Intent(getApplicationContext(), SetupWizard1Activity.class);
+			startActivity(intent);
 			break;
 		case R.id.bt_normal_dialog_cancel:
 			dialog.dismiss();
@@ -149,15 +160,60 @@ public class LostProtectedActivity extends Activity implements OnClickListener {
 			}
 			if(isSetup()){
 				Log.i(TAG, "加载手机防盗主界面");
+				setContentView(R.layout.lost_protected);
+				
+				tv_lost_protected_number = (TextView) this.findViewById(R.id.tv_lost_protected_number);
+				tv_reEntry_setup_wizard = (TextView) this.findViewById(R.id.tv_reEntry_setup_wizard);
+				cb_isprotecting = (CheckBox) this.findViewById(R.id.cb_isprotecting);
+				
+				// 初始化这些控件
+				String number = sp.getString("safenumber", null);
+				tv_lost_protected_number.setText("安全手机号码为：" + number);
+				
+				// 重新进入设置向导
+				tv_reEntry_setup_wizard.setOnClickListener(this);
+				
+				// 初始化CheckBox的状态
+				boolean isProtecting = sp.getBoolean("isProtecting", false);
+				if(isProtecting){
+					cb_isprotecting.setText("手机防盗保护中");
+					cb_isprotecting.setChecked(true);
+				}
+				
+				cb_isprotecting.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+					
+					@Override
+					public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+						if(isChecked){
+							cb_isprotecting.setText("手机防盗保护中");
+							Editor editor = sp.edit();
+							editor.putBoolean("isProtecting", true);
+							editor.commit();
+						}else{
+							cb_isprotecting.setText("没有开启防盗保护");
+							Editor editor = sp.edit();
+							editor.putBoolean("isProtecting", false);
+							editor.commit();
+						}
+					}
+				});
+				
+				
 			}else{
 				Log.i(TAG, "激活设置向导界面");
 				finish();
-				Intent intent = new Intent(getApplicationContext(), SetupWizard1Activity.class);
-				startActivity(intent);
+				Intent intent1 = new Intent(getApplicationContext(), SetupWizard1Activity.class);
+				startActivity(intent1);
 			}
 			dialog.dismiss();
 			break;
+		case R.id.tv_reEntry_setup_wizard:
+			finish();
+			Intent intent11 = new Intent(LostProtectedActivity.this, SetupWizard1Activity.class);
+			startActivity(intent11);
+			break;
 		}
+		
 	}
 
 	/**
