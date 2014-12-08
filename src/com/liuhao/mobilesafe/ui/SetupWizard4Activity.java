@@ -1,10 +1,13 @@
 package com.liuhao.mobilesafe.ui;
 
 import com.liuhao.mobilesafe.R;
+import com.liuhao.mobilesafe.receiver.MyAdmin;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -37,31 +40,33 @@ public class SetupWizard4Activity extends Activity implements OnClickListener {
 
 		bt_prev.setOnClickListener(this);
 		bt_setup_finish.setOnClickListener(this);
-		
+
 		// 初始化CheckBox的状态
 		boolean isProtecting = sp.getBoolean("isProtecting", false);
-		if(isProtecting){
+		if (isProtecting) {
 			cb_isprotecting.setText("手机防盗保护中");
 			cb_isprotecting.setChecked(true);
 		}
-		
-		cb_isprotecting.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				if(isChecked){
-					cb_isprotecting.setText("手机防盗保护中");
-					Editor editor = sp.edit();
-					editor.putBoolean("isProtecting", true);
-					editor.commit();
-				}else{
-					cb_isprotecting.setText("没有开启防盗保护");
-					Editor editor = sp.edit();
-					editor.putBoolean("isProtecting", false);
-					editor.commit();
-				}
-			}
-		});
+
+		cb_isprotecting
+				.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+					@Override
+					public void onCheckedChanged(CompoundButton buttonView,
+							boolean isChecked) {
+						if (isChecked) {
+							cb_isprotecting.setText("手机防盗保护中");
+							Editor editor = sp.edit();
+							editor.putBoolean("isProtecting", true);
+							editor.commit();
+						} else {
+							cb_isprotecting.setText("没有开启防盗保护");
+							Editor editor = sp.edit();
+							editor.putBoolean("isProtecting", false);
+							editor.commit();
+						}
+					}
+				});
 
 	}
 
@@ -77,28 +82,33 @@ public class SetupWizard4Activity extends Activity implements OnClickListener {
 			break;
 		case R.id.bt_setup_finish:
 			finishSetup();
-			
-			if(cb_isprotecting.isChecked()){
+
+			if (cb_isprotecting.isChecked()) {
 				finish();
-			}else{
-				AlertDialog.Builder builder = new Builder(SetupWizard4Activity.this);
+			} else {
+				AlertDialog.Builder builder = new Builder(
+						SetupWizard4Activity.this);
 				builder.setTitle("提醒");
 				builder.setMessage("强烈建议开启手机防盗，是否完成设置");
-				
-				builder.setPositiveButton("不用了", new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						finish();
-						finishSetup();
-					}
-				});
-				builder.setNegativeButton("好的", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						
-					}
-				});
+
+				builder.setPositiveButton("不用了",
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								finish();
+								finishSetup();
+							}
+						});
+				builder.setNegativeButton("好的",
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+
+							}
+						});
 				builder.create().show();
 			}
 			break;
@@ -110,6 +120,16 @@ public class SetupWizard4Activity extends Activity implements OnClickListener {
 		Editor editor = sp.edit();
 		editor.putBoolean("isAlreadySetup", true);
 		editor.commit();
+
+		// 注册DevicePolicyManager
+		DevicePolicyManager manager = (DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
+
+		ComponentName mAdminName = new ComponentName(this, MyAdmin.class);
+		if (!manager.isAdminActive(mAdminName)) {
+			Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+			intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, mAdminName);
+			startActivity(intent);
+		}
 	}
 
 }
