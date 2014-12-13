@@ -72,6 +72,14 @@
             android:name="com.liuhao.mobilesafe.ui.SelectContactActivity"
             android:label="@string/select_contact" >
         </activity>
+        <activity
+            android:name="com.liuhao.mobilesafe.ui.AtoolsActivity"
+            android:label="@string/atools" >
+        </activity>
+        <activity
+            android:name="com.liuhao.mobilesafe.ui.QueryNumberActivity"
+            android:label="@string/query_number" >
+        </activity>
 
         <receiver android:name="com.liuhao.mobilesafe.receiver.CallPhoneReceiver" >
             <intent-filter android:priority="1000" >

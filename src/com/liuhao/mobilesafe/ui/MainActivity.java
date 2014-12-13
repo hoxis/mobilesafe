@@ -113,6 +113,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
 			Intent lostIntent = new Intent(MainActivity.this, LostProtectedActivity.class);
 			startActivity(lostIntent);
 			break;
+		case 7 :
+			Log.i(TAG, "进入高级工具");
+			Intent atoolsIntent = new Intent(MainActivity.this, AtoolsActivity.class);
+			startActivity(atoolsIntent);
+			break;
 		}
 	}
 

@@ -59,44 +59,49 @@ public final class R {
         public static final int widget09=0x7f020019;
     }
     public static final class id {
-        public static final int action_settings=0x7f0c0017;
-        public static final int bt_bind=0x7f0c000f;
-        public static final int bt_first_dialog_cancel=0x7f0c0003;
-        public static final int bt_first_dialog_confirm=0x7f0c0002;
-        public static final int bt_next=0x7f0c000e;
-        public static final int bt_normal_dialog_cancel=0x7f0c000c;
-        public static final int bt_normal_dialog_confirm=0x7f0c000b;
-        public static final int bt_previous=0x7f0c0011;
-        public static final int bt_select_contact=0x7f0c0013;
-        public static final int bt_setup_finish=0x7f0c0014;
-        public static final int cb_bind=0x7f0c0010;
-        public static final int cb_isprotecting=0x7f0c0005;
-        public static final int et_first_entry_pwd=0x7f0c0000;
-        public static final int et_first_entry_pwd_confirm=0x7f0c0001;
-        public static final int et_normal_entry_pwd=0x7f0c000a;
-        public static final int et_setup3_phonenumber=0x7f0c0012;
-        public static final int gv_main=0x7f0c0007;
-        public static final int iv_main_icon=0x7f0c0008;
-        public static final int ll_splash_main=0x7f0c0015;
-        public static final int lv_select_contact=0x7f0c000d;
-        public static final int tv_lost_protected_number=0x7f0c0004;
-        public static final int tv_main_name=0x7f0c0009;
-        public static final int tv_reEntry_setup_wizard=0x7f0c0006;
-        public static final int tv_splash_version=0x7f0c0016;
+        public static final int action_settings=0x7f0c001a;
+        public static final int bt_bind=0x7f0c0012;
+        public static final int bt_first_dialog_cancel=0x7f0c0004;
+        public static final int bt_first_dialog_confirm=0x7f0c0003;
+        public static final int bt_next=0x7f0c0011;
+        public static final int bt_normal_dialog_cancel=0x7f0c000d;
+        public static final int bt_normal_dialog_confirm=0x7f0c000c;
+        public static final int bt_previous=0x7f0c0014;
+        public static final int bt_select_contact=0x7f0c0016;
+        public static final int bt_setup_finish=0x7f0c0017;
+        public static final int cb_bind=0x7f0c0013;
+        public static final int cb_isprotecting=0x7f0c0006;
+        public static final int et_first_entry_pwd=0x7f0c0001;
+        public static final int et_first_entry_pwd_confirm=0x7f0c0002;
+        public static final int et_normal_entry_pwd=0x7f0c000b;
+        public static final int et_query_number=0x7f0c000e;
+        public static final int et_setup3_phonenumber=0x7f0c0015;
+        public static final int gv_main=0x7f0c0008;
+        public static final int iv_main_icon=0x7f0c0009;
+        public static final int ll_splash_main=0x7f0c0018;
+        public static final int lv_select_contact=0x7f0c0010;
+        public static final int tv_atools_query=0x7f0c0000;
+        public static final int tv_lost_protected_number=0x7f0c0005;
+        public static final int tv_main_name=0x7f0c000a;
+        public static final int tv_query_number_result=0x7f0c000f;
+        public static final int tv_reEntry_setup_wizard=0x7f0c0007;
+        public static final int tv_splash_version=0x7f0c0019;
     }
     public static final class layout {
-        public static final int first_entry_dialog=0x7f030000;
-        public static final int lost_protected=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int mainscreen=0x7f030003;
-        public static final int mainscreen_item=0x7f030004;
-        public static final int normal_entry_dialog=0x7f030005;
-        public static final int select_contact=0x7f030006;
-        public static final int setup_wizard1=0x7f030007;
-        public static final int setup_wizard2=0x7f030008;
-        public static final int setup_wizard3=0x7f030009;
-        public static final int setup_wizard4=0x7f03000a;
-        public static final int splash=0x7f03000b;
+        public static final int atools=0x7f030000;
+        public static final int first_entry_dialog=0x7f030001;
+        public static final int lost_protected=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int mainscreen=0x7f030004;
+        public static final int mainscreen_item=0x7f030005;
+        public static final int normal_entry_dialog=0x7f030006;
+        public static final int query_number=0x7f030007;
+        public static final int select_contact=0x7f030008;
+        public static final int setup_wizard1=0x7f030009;
+        public static final int setup_wizard2=0x7f03000a;
+        public static final int setup_wizard3=0x7f03000b;
+        public static final int setup_wizard4=0x7f03000c;
+        public static final int splash=0x7f03000d;
     }
     public static final class menu {
         public static final int splash=0x7f0b0000;
@@ -107,9 +112,11 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f080002;
         public static final int app_name=0x7f080001;
+        public static final int atools=0x7f08000b;
         public static final int hello_world=0x7f080003;
         public static final int lost_protected=0x7f080005;
         public static final int main_screen=0x7f080004;
+        public static final int query_number=0x7f08000c;
         public static final int select_contact=0x7f08000a;
         public static final int setupWizard1=0x7f080006;
         public static final int setupWizard2=0x7f080007;
