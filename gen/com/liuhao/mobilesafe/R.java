@@ -11,8 +11,10 @@ public final class R {
     public static final class anim {
         public static final int alpha_in=0x7f040000;
         public static final int alpha_out=0x7f040001;
-        public static final int translate_in=0x7f040002;
-        public static final int translate_out=0x7f040003;
+        public static final int cycle_7=0x7f040002;
+        public static final int shake=0x7f040003;
+        public static final int translate_in=0x7f040004;
+        public static final int translate_out=0x7f040005;
     }
     public static final class attr {
     }
@@ -110,18 +112,19 @@ public final class R {
         public static final int ylzs=0x7f060000;
     }
     public static final class string {
-        public static final int action_settings=0x7f080002;
-        public static final int app_name=0x7f080001;
-        public static final int atools=0x7f08000b;
-        public static final int hello_world=0x7f080003;
-        public static final int lost_protected=0x7f080005;
-        public static final int main_screen=0x7f080004;
-        public static final int query_number=0x7f08000c;
-        public static final int select_contact=0x7f08000a;
-        public static final int setupWizard1=0x7f080006;
-        public static final int setupWizard2=0x7f080007;
-        public static final int setupWizard3=0x7f080008;
-        public static final int setupWizard4=0x7f080009;
+        public static final int action_settings=0x7f080003;
+        public static final int app_name=0x7f080002;
+        public static final int atools=0x7f08000c;
+        public static final int dbadressurl=0x7f080001;
+        public static final int hello_world=0x7f080004;
+        public static final int lost_protected=0x7f080006;
+        public static final int main_screen=0x7f080005;
+        public static final int query_number=0x7f08000d;
+        public static final int select_contact=0x7f08000b;
+        public static final int setupWizard1=0x7f080007;
+        public static final int setupWizard2=0x7f080008;
+        public static final int setupWizard3=0x7f080009;
+        public static final int setupWizard4=0x7f08000a;
         public static final int updateurl=0x7f080000;
     }
     public static final class style {
