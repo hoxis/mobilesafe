@@ -4,16 +4,21 @@ import java.io.File;
 
 import com.liuhao.mobilesafe.R;
 import com.liuhao.mobilesafe.engine.DownloadFileTask;
+import com.liuhao.mobilesafe.service.AttributionService;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +28,10 @@ public class AtoolsActivity extends Activity implements OnClickListener {
 	protected static final int ERROR = 10;
 	private TextView tv_query;
 	private ProgressDialog pd;
+	private TextView tv_atools_attribution;
+	private CheckBox cb_atools_attribution;
+	private Intent serviceIntent;
+	
 	private Handler handler = new Handler(){
 
 		@Override
@@ -45,6 +54,25 @@ public class AtoolsActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.atools);
 
+		tv_atools_attribution = (TextView) this.findViewById(R.id.tv_atools_attribution);
+		cb_atools_attribution = (CheckBox) this.findViewById(R.id.cb_atools_attribution);
+		serviceIntent = new Intent(this, AttributionService.class);
+		cb_atools_attribution.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				if(isChecked){
+					startService(serviceIntent);
+					tv_atools_attribution.setTextColor(Color.WHITE);
+					tv_atools_attribution.setText("显示来电归属地服务已开启");
+				} else{
+					stopService(serviceIntent);
+					tv_atools_attribution.setTextColor(Color.RED);
+					tv_atools_attribution.setText("显示来电归属地服务未开启");
+				}
+			}
+		});
+		
 		tv_query = (TextView) this.findViewById(R.id.tv_atools_query);
 		tv_query.setOnClickListener(this);
 	}

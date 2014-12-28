@@ -81,6 +81,9 @@
             android:label="@string/query_number" >
         </activity>
 
+        <service android:name="com.liuhao.mobilesafe.service.AttributionService" >
+        </service>
+
         <receiver android:name="com.liuhao.mobilesafe.receiver.CallPhoneReceiver" >
             <intent-filter android:priority="1000" >
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
