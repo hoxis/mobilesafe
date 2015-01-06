@@ -1,5 +1,6 @@
 package com.liuhao.mobilesafe.service;
 
+import com.liuhao.mobilesafe.R;
 import com.liuhao.mobilesafe.engine.NumberAttributionService;
 
 import android.app.Service;
@@ -9,6 +10,7 @@ import android.os.IBinder;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.widget.TextView;
@@ -19,7 +21,7 @@ public class AttributionService extends Service {
 	private TelephonyManager manager;
 	private MyPhoneListener listener;
 	private WindowManager windowManager;
-	private TextView tv;
+	private View view;
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -29,6 +31,7 @@ public class AttributionService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 		listener = new MyPhoneListener();
 		// 注册系统电话管理服务的监听器
 		manager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
@@ -43,9 +46,9 @@ public class AttributionService extends Service {
 			super.onCallStateChanged(state, incomingNumber);
 			switch (state) {
 			case TelephonyManager.CALL_STATE_IDLE:// 处于静止状态，没有呼叫
-				if(tv != null){
-					windowManager.removeView(tv);
-					tv = null;
+				if(view != null){
+					windowManager.removeView(view);
+					view = null;
 				}
 				break;
 			case TelephonyManager.CALL_STATE_RINGING:// 响铃状态
@@ -78,11 +81,13 @@ public class AttributionService extends Service {
 			params.flags = WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
 					| WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
 					| WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE;
-
-			tv = new TextView(AttributionService.this);
-			tv.setText("归属地为：" + attribution);
-			windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
-			windowManager.addView(tv, params);
+			
+			view = View.inflate(getApplicationContext(), R.layout.show_attribution, null);
+			TextView tv_attribution = (TextView) view.findViewById(R.id.tv_attribution);
+			tv_attribution.setText(attribution);
+			tv_attribution.setTextSize(24);
+			
+			windowManager.addView(view, params);
 		}
 
 	}

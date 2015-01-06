@@ -61,7 +61,7 @@ public final class R {
         public static final int widget09=0x7f020019;
     }
     public static final class id {
-        public static final int action_settings=0x7f0c001c;
+        public static final int action_settings=0x7f0c001e;
         public static final int bt_bind=0x7f0c0014;
         public static final int bt_first_dialog_cancel=0x7f0c0006;
         public static final int bt_first_dialog_confirm=0x7f0c0005;
@@ -81,15 +81,17 @@ public final class R {
         public static final int et_setup3_phonenumber=0x7f0c0017;
         public static final int gv_main=0x7f0c000a;
         public static final int iv_main_icon=0x7f0c000b;
-        public static final int ll_splash_main=0x7f0c001a;
+        public static final int ll_attribution=0x7f0c001a;
+        public static final int ll_splash_main=0x7f0c001c;
         public static final int lv_select_contact=0x7f0c0012;
         public static final int tv_atools_attribution=0x7f0c0001;
         public static final int tv_atools_query=0x7f0c0000;
+        public static final int tv_attribution=0x7f0c001b;
         public static final int tv_lost_protected_number=0x7f0c0007;
         public static final int tv_main_name=0x7f0c000c;
         public static final int tv_query_number_result=0x7f0c0011;
         public static final int tv_reEntry_setup_wizard=0x7f0c0009;
-        public static final int tv_splash_version=0x7f0c001b;
+        public static final int tv_splash_version=0x7f0c001d;
     }
     public static final class layout {
         public static final int atools=0x7f030000;
@@ -105,7 +107,8 @@ public final class R {
         public static final int setup_wizard2=0x7f03000a;
         public static final int setup_wizard3=0x7f03000b;
         public static final int setup_wizard4=0x7f03000c;
-        public static final int splash=0x7f03000d;
+        public static final int show_attribution=0x7f03000d;
+        public static final int splash=0x7f03000e;
     }
     public static final class menu {
         public static final int splash=0x7f0b0000;
